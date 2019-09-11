@@ -5,9 +5,18 @@
         <div><a routerLink="/">FITNESS</a></div>
         <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
             <ul fxLayout class="nav-items" fxLayoutGap="0.8em">
-                <a routerLink="/signup">S'inscrire</a>
-                <a routerLink="/login">Se connecter</a>
-                <a routerLink="/training">Entrainement</a>
+                <li *ngIf="!isAuth">
+                    <a routerLink="/signup">S'inscrire</a>
+                </li>
+                <li *ngIf="!isAuth">
+                    <a routerLink="/login">Se connecter</a>
+                </li>
+                <li *ngIf="isAuth">
+                    <a routerLink="/training">Entrainement</a>
+                 </li>
+                 <li *ngIf="isAuth">
+                     <a (click)="onLogout()" style="cursor:pointer">Déconnexion</a>
+                 </li>
             </ul>
         </div>
     </mat-toolbar>

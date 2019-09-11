@@ -18,6 +18,8 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapte
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
+import { AuthService } from './services/AuthService';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     SignUpComponent,
     LoginComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }],
-  bootstrap: [AppComponent]
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },AuthService],
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }

@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Etes-vous sûr de vouloir quitter ?</h2>
+<mat-dialog-content fxLayoutAlign="center">Vous avez déjà réalisé {{ passedData.progress }} % de l'exercice</mat-dialog-content>
+<mat-dialog-actions fxLayoutAlign="center">
+    <button type="submit" mat-button [mat-dialog-close]="true" >Oui</button>
+    <button type="submit" mat-button [mat-dialog-close]="false">Non</button>
+</mat-dialog-actions>
