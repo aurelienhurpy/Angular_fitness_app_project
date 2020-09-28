@@ -52,6 +52,7 @@
         
 
 
-        <button [disabled]="signupForm.invalid" type="submit" mat-raised-button color="primary">S'inscrire</button>
+        <button *ngIf="!isLoading" [disabled]="signupForm.invalid" type="submit" mat-raised-button color="primary">S'inscrire</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
     </form>
 </section>

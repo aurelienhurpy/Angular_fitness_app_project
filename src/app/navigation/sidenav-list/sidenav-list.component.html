@@ -9,6 +9,12 @@
         <a routerLink="/training" mat-list-item (click)="onClose()"><mat-icon>fitness_center</mat-icon><span> Entrainement</span></a>
     </li>
     <li *ngIf="isAuth">
+        <a routerLink="/calories" mat-list-item (click)="onClose()"><mat-icon>restaurant_menu</mat-icon><span> Alimentation</span></a>
+    </li>
+    <li *ngIf="isAuth">
         <a mat-list-item (click)="onLogout()" style="cursor:pointer"><mat-icon>eject</mat-icon><span > Déconnexion</span></a>
     </li>
     </mat-nav-list>
+
+
+   

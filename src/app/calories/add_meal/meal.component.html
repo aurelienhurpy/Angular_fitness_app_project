@@ -1,0 +1,51 @@
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" fxLayoutGap="1.5em">
+        <h1>Ajout d'un aliment</h1>
+        <mat-form-field>
+            <input 
+                type="text" 
+                placeholder="Nom de l'aliment" 
+                matInput ngModel 
+                name="name"
+                #alimentInput="ngModel"
+                
+                required
+            >
+            <mat-error *ngIf="alimentInput.hasError('required')">Ce champ doit être renseigné</mat-error>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                type="number" 
+                placeholder="Quantité en grammes" 
+                matInput ngModel 
+                name="quantite"
+                #quantiteInput="ngModel"
+                required
+            >
+            <mat-error *ngIf="quantiteInput.hasError('required')">Ce champ doit être renseigné</mat-error>
+        </mat-form-field>
+
+    <mat-form-field>
+        <input 
+            type="number" 
+            placeholder="Calories pour 100g" 
+            matInput ngModel 
+            name="calories"
+            #caloriesInput="ngModel"
+            required
+        >
+        <mat-error *ngIf="caloriesInput.hasError('required')">Ce champ doit être renseigné</mat-error>
+    </mat-form-field>
+    
+        <p>Calories ingérées : </p>
+    
+        
+        
+        
+
+
+        <button *ngIf="!isLoading" [disabled]="signupForm.invalid" type="submit" mat-raised-button color="primary">Enregistrer</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </form>
+</section>
